@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Library
+Bundle-SymbolicName: org.xtext.example.tfl.library
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.xtext.example.tfl.library
+Bundle-RequiredExecutionEnvironment: JavaSE-23

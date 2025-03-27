@@ -1,0 +1,21 @@
+
+// XPECT_SETUP org.xtext.example.tfl.xpect.XPectTests END_SETUP
+   
+stop Airport
+
+// XPECT warnings --> "Stop name should start with an upper-case character" at "downtown"
+stop downtown
+
+// XPECT warnings --> "This stop is unused" at "Tower"
+stop Tower
+
+transport SkyCab 
+capacity 4 
+speed 300.5 kmph 
+routes { 
+    Airport -> downtown in 15 min 
+} 
+passengers { 
+    peak 3 
+    nonpeak 1 
+}

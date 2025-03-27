@@ -1,0 +1,47 @@
+
+// XPECT_SETUP org.xtext.example.tfl.xpect.XPectTests END_SETUP
+
+/*
+XPECT generated file TestTfl.java ---
+import java.util.*;
+import org.xtext.example.tfl.library.*;
+import org.xtext.example.tfl.library.TransportScheduler.Route;
+
+public class TestTfl {
+
+    public static void main(String[] args) {
+        TransportScheduler manager = new TransportScheduler();
+
+        manager.addTransport("SkyCab", 4, 300.5, Arrays.asList(
+            new Route<>("Airport","Downtown", 15),
+            new Route<>("Downtown", "CentralPark", 8)
+        ), 3, 1);
+
+        manager.addDisruption("SkyCab", "Downtown", 20);
+
+        manager.generateSchedule();
+        manager.calculateFare();
+    }
+}
+---   
+*/ 
+stop Airport
+stop Downtown
+stop CentralPark
+
+transport SkyCab 
+capacity 4 
+speed 300.5 kmph 
+routes { 
+    Airport -> Downtown in 15 min 
+    Downtown -> CentralPark in 8 min 
+} 
+passengers { 
+    peak 3 
+    nonpeak 1 
+}
+
+disruption D1 
+affects SkyCab 
+at Downtown 
+duration 20 min

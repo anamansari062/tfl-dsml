@@ -1,0 +1,36 @@
+stop StationA
+stop StationB
+stop StationC
+stop Airport
+stop Downtown
+stop CentralPark
+
+transport HyperloopX
+capacity 100 
+speed 800.5 kmph 
+routes { 
+    StationA -> StationB in 5 min 
+    StationB -> StationC in 10 min 
+} 
+passengers { 
+    peak 80 
+    nonpeak 30
+}
+
+transport SkyCab 
+capacity 4 
+speed 300.5 kmph 
+routes { 
+    Airport -> Downtown in 15 min 
+    Downtown -> CentralPark in 8 min 
+    CentralPark -> Airport in 20 min
+} 
+passengers { 
+    peak 3 
+    nonpeak 1 
+}
+
+disruption D1 
+affects SkyCab 
+at Airport 
+duration 20 min
